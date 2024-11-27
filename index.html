@@ -5,14 +5,46 @@
     <title>Document</title>
     <h1> heading </h1>
 </head>
-<body  style="padding-left: 20cm; " >
-    <h1 style="font-weight: 200;"> middle </h1>
+<body>
     <form>
-    <label style="padding-right: 2.5cm; " for="fname"> ชื่อ </label>
-    <input type="text" id="fname" name="fname" ><br>
-    <label style="padding-right: 2cm;" for="lname"> สกุล </label>
-    <input type="text" id="lname" name="lname">
+    <table>
+    <tr>
+        <td> ชื่อ </td>
+        <td><input type="text" id="fname" name="fname"></td>
+    </tr>
+    <tr>
+        <td> สกุล </td>
+        <td><input type="text" id="lastname" name="lastname"></td>
+    </tr>
+    <tr>
+        <td> วัน/เดือน/ปีเกิด </td>
+        <td><input type="date" id="date" name="date"></td>
+    </tr>
+    <tr>
+        <td> วัน/เดือน/ปีเกิด </td>
+        <td><input type="radio" id="sex" name="sex"> ชาย <input type="radio" id="sex" name="sex"> หญิง </td>
+    </tr>
+    <tr>
+        <td> รูป </td>
+        <td><input type="file" id="pic" name="pic"> </td>
+    </tr>
+    <tr>
+        <td> ที่อยู่ </td>
+        <td><textarea rows="4" cols="21"></textarea></td>
+    </tr>
+    <tr>
+        <td> สิ่งที่ชอบ </td>
+        <td><select id="colours" name="colours" size="1">
+            <option value="Red">แดง</option>
+            <option value="Blue">ฟ้า</option>
+            <option value="Green">เขียว</option>
+            <option value="Yellow">เหลือง</option>
+            </select></td>
+    </tr>
+
+    </table>
     </form>
+
 
 
 </body>
