@@ -2,8 +2,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <h1> heading </h1>
+    <title>Workshop # html-form</title>
+    <h1> Workshop # HTML-FORM </h1>
 </head>
 <body>
     <form>
@@ -21,7 +21,7 @@
         <td><input type="date" id="date" name="date"></td>
     </tr>
     <tr>
-        <td> วัน/เดือน/ปีเกิด </td>
+        <td> เพศ </td>
         <td><input type="radio" id="sex" name="sex"> ชาย <input type="radio" id="sex" name="sex"> หญิง </td>
     </tr>
     <tr>
@@ -35,16 +35,25 @@
     <tr>
         <td> สิ่งที่ชอบ </td>
         <td><select id="colours" name="colours" size="1">
-            <option value="Red">แดง</option>
-            <option value="Blue">ฟ้า</option>
-            <option value="Green">เขียว</option>
-            <option value="Yellow">เหลือง</option>
+            <option value="Red">สีแดง</option>
+            <option value="Blue">สีฟ้า</option>
+            <option value="Green">สีเขียว</option>
+            <option value="Yellow">สีเหลือง</option>
             </select></td>
     </tr>
-
+    <tr>
+        <td> แนวเพลงที่ชอบ </td>
+        <td><input type="radio" id="life" name="tung"> เพื่อชีวิต <input type="radio" id="life" name="tung"> ลูกทุ่ง <input type="radio" id="life" name="tung"> อื่นๆ </td>
+    </tr>
     </table>
+    <tr><br>
+        <td><input type="checkbox" id="check" name="check"> </td>
+        <td> ยินยอมให้เก็บข้อมูล </td>
+        <br><br>
+        <pre><td><input type="reset" value="Reset"></td>                                    <td><input type="submit" value="Submit"></td></pre> 
+    </tr>
     </form>
-
+    
 
 
 </body>
