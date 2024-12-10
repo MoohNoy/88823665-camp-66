@@ -1,0 +1,137 @@
+
+table {
+    font-family: 'Bai Jamjuree';
+    border: 2px solid rgb(16, 48, 190);
+    border-radius: 25px;
+    padding: 10px;
+    box-shadow: 6px 6px 12px gray;
+    background-color: rgba(223, 232, 245, 0.979);
+    margin: auto;
+}
+header {
+    font-family: 'Parkinsans';
+    border: 2px solid rgb(16, 48, 190);
+    border-width: 3px;
+    text-align: center;
+    max-width: 12cm;
+    margin: auto;
+    margin-top: 1cm;
+    border-radius: 5px;
+    background-color: rgb(232, 235, 238);
+    color: #020202;
+    text-shadow: 10px 10px 24px rgb(133, 229, 236);
+
+}
+body{
+    background: url('a4a5213d12274e96ae25f2468aad27bc.gif');
+    background-size: cover;
+
+}
+header :hover::after{
+    content: '😱';
+}
+
+#check{
+    margin: 20px 5 ;
+}
+#colours{
+    border: 1px solid rgb(87, 206, 241); 
+    border-radius: 5px;
+}   
+#colours:focus{
+    border: 2px solid rgb(15, 22, 77); 
+    background-color: azure;
+    border-radius: 5px; 
+} 
+input[type="text"] {
+    border: 1px solid rgb(87, 206, 241);
+    outline: none;
+    border-radius: 5px;
+}
+input[type="text"]:focus{
+    border: 2px solid rgb(15, 22, 77);
+    background-color: rgb(187, 167, 241);
+    outline: none;
+    border-radius: 5px;
+}
+input[type="text"]:hover {
+    border: 2px solid rgb(15, 22, 77);
+    outline: none;
+    background-color: #cbf4fc;
+}
+
+input[type="file"] {
+    outline: none;
+    border: 1px solid rgb(15, 22, 77);
+    background-color: azure;
+    color: rgb(0, 0, 0);
+    border-radius: 5px; 
+}
+input[type="file"]:hover {
+    border: 2px solid rgb(15, 22, 77);
+    outline: none;
+    background-color: #cbf4fc;
+}
+input[type="file"]:hover::after{
+    content: '🎥';
+    padding-left: 5px;
+}
+input[type = "submit"] {
+    font-family: 'Parkinsans';
+    font-size: 12px;
+    margin-left: 2.5cm;
+    transform: scale(1);
+    border-color: rgb(21, 127, 248);
+    background-color: rgb(121, 180, 228);
+    border-radius: 1cm; 
+}
+input[type = "submit"]:hover{
+    font-family: 'Parkinsans';
+    border-color: rgb(21, 127, 248);
+    background-color: rgb(59, 152, 240);
+    
+}
+input[type = "submit"]:focus{
+    font-family: 'Parkinsans';
+    background-color: rgb(252, 253, 253);
+    border-color: rgb(21, 127, 248);
+}
+
+input[type = "reset"] {
+    font-family: 'Parkinsans';
+    font-size: 12px;
+    margin-left: 2cm;
+    transform: scale(1);
+    border-color: rgb(21, 127, 248);
+    background-color: rgb(121, 180, 228);
+    border-radius: 1cm;
+}
+input[type = "reset"]:hover {
+    font-family: 'Parkinsans';
+    border-color: rgb(21, 127, 248);
+    background-color: rgb(59, 152, 240);
+}
+input[type = "reset"]:focus {
+    font-family: 'Parkinsans';
+    background-color: rgb(252, 253, 253);
+    border-color: rgb(21, 127, 248);
+    
+}
+.picture{
+    background: url('221253.gif');
+    width: 3cm;
+    height: 2cm;
+    margin-left: 27cm;
+    margin-top: 2.5cm;
+    background-size: cover;
+    align-items: center;
+    position: absolute;
+    z-index: 2; 
+}
+
+
+
+
+
+
+
