@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css\bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Parkinsans&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container mt-5 px-5">
@@ -35,9 +36,83 @@
             <div class= "row mt-2">
                 <label class="col-md-4 col-form-label"> เพศ </label>
                 <div class="col-md-8 ">
-                    <input type="" class="form-control" id="exampleFormControlInput1">
+                    <div class="form-check ">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" value="gender">
+                        <label class="form-check-label" >
+                          ชาย
+                        </label>
+                      </div>
+                      <div class="form-check ">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" value="gender">
+                        <label class="form-check-label" >
+                          หญิง
+                        </label>
+                      </div>
                 </div>
             </div>
+            <div class= "row mt-2">
+                <label class="col-md-4 col-form-label"> รูป</label>
+                <div class="col-md-8 ">
+                    <input type="file" class="form-control" id="exampleFormControlInput1">
+                </div>
+            </div>
+            <div class= "row mt-2">
+                <label class="col-md-4 col-form-label"> ที่อยู่ </label>
+                <div class="col-md-8 ">
+                    <textarea rows="6" class="form-control"></textarea>
+                </div>
+            </div>
+            <div class= "row mt-2">
+                <label class="col-md-4 col-form-label"> สีที่ชอบ </label>
+                <div class="col-md-8 ">
+                    <select class="form-select" aria-label=".form-select-sm example">
+                        <option selected>สีแดง</option>
+                        <option value="1">สีน้ำเงิน</option>
+                        <option value="2">สีเหลือง</option>
+                        <option value="3">สีเขียว</option>
+                      </select>
+                </div>
+            </div>
+            <div class= "row mt-2">
+                <label class="col-md-4 col-form-label"> เพลงที่ชอบ </label>
+                <div class="col-md-8 ">
+                    <div class="form-check ">
+                        <input class="form-check-input" type="radio" name="song"  value="song">
+                        <label class="form-check-label" >
+                          เพื่อชีวิต
+                        </label>
+                      </div>
+                      <div class="form-check ">
+                        <input class="form-check-input" type="radio" name="song"  value="song">
+                        <label class="form-check-label" >
+                          ลูกทุ่ง
+                        </label>
+                      </div>
+                      <div class="form-check ">
+                        <input class="form-check-input" type="radio" name="song"  value="song">
+                        <label class="form-check-label" >
+                          อื่นๆ
+                        </label>
+                      </div>
+                </div>
+            </div>
+            <div class= "row mt-2">
+                <div class="col-md-4 col-form-label">
+                    <input class="form-check-input" type="checkbox" value="">
+                    <label class="form-check-label px-1">
+                    ยินยอมให้เก็บข้อมูล
+                    </label>
+                </div>
+            </div>
+            <div class= "row mt-2">
+                <div class="col-md-11 col-form-label">
+                    <input class="btn btn-secondary btn-sm" type="reset" value="Reset">
+                </div>
+                <div class="col-md-1 col-form-label">
+                    <input class="btn btn-success btn-sm" type="submit" value="submit">
+                </div>
+            </div>
+
         </form>
     </div>
     </div>
