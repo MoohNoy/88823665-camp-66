@@ -24,17 +24,17 @@
             <?php 
             if ($_SERVER["REQUEST_METHOD"] == "POST") {?>
             <div class="h2 col text-start mt-2  ">
-                <?php  if($_POST["email"]!=null && $_POST["detail"]!=null){
-                    echo $_POST["email"];
-                    $num = $_POST["detail"]; 
+                <?php  if($_POST["email"]!=null && $_POST["detail"]!=null){ //เขียนเงือนไขต้องกรอกข้อมูลให้ครบทุกช่อง
+                    echo $_POST["email"]; //show email [Postใช้งานใกล้เคียงกับ get{} ]
+                    $num = $_POST["detail"]; //สร้างตัวแปร
                     ?>
-                    <div class="border rounded p-3 mt-3 border-dark border-3 ">
+                    <div class="border rounded p-3 mt-3 border-dark border-3 " > <!-- สร้างกรอบ !--> 
                     <?php 
                     for ($i = 1; $i <= $num; $i++) {
                         ?>
                         <div class="row ">
                             <div class="h2 col text-start mt-1"> 
-                            <?php echo $i; ?> เป็นเลข <?php if($i%2==0){echo "คู่" ; }else{echo "คี่" ;}  ?> 
+                            <?php echo $i; ?> เป็นเลข <?php if($i%2==0){echo "คู่" ; }else{echo "คี่" ;}  ?> <!-- print เลขคู่คี่ !--> 
                             </div>
                         </div>
                     <?php 

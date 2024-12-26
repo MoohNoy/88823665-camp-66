@@ -25,17 +25,17 @@
             <?php 
             if ($_SERVER["REQUEST_METHOD"] == "POST") {?>
             <div class="h2 col text-start mt-2">
-                <?php  if($_POST["email"]!=null && $_POST["detail"]!=null){
-                    echo $_POST["email"];
-                    $mul = $_POST["detail"]; 
+                <?php  if($_POST["email"]!=null && $_POST["detail"]!=null){ //เขียนเงือนไขต้องกรอกข้อมูลให้ครบทุกช่อง
+                    echo $_POST["email"]; //show email [Postใช้งานใกล้เคียงกับ get{} ]
+                    $mul = $_POST["detail"]; //สร้างตัวแปร
                     ?>
-                    <div class="border rounded p-3 mt-3 border-dark border-3 ">
+                    <div class="border rounded p-3 mt-3 border-dark border-3 "> <!-- สร้างกรอบ !--> 
                     <?php
                     for ($i = 1; $i <= 12; $i++) {
                         ?>
                         <div class="row">
                             <div class="h2 col text-start"> 
-                                <?php echo $mul; ?> x <?php echo $i; ?> = <?php echo ($mul * $i); ?> 
+                                <?php echo $mul; ?> x <?php echo $i; ?> = <?php echo ($mul * $i); ?> <!-- print ตัวคูณ ผลลัพธ์ !-->
                             </div>
                         </div>
                     <?php 
