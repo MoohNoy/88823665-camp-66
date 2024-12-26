@@ -12,7 +12,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label"> Enter a number </label>
-                    <input name="detail" type="number" class="form-control" id="exampleFormControlInput2" >
+                    <input name="detail" type="number" class="form-control" id="exampleFormControlInput2" placeholder="1 2 3" >
                 </div>
                 <div class="mb-3">
                     <button class="btn btn-success" type="submit">Submit</button>
@@ -27,6 +27,9 @@
                 <?php  if($_POST["email"]!=null && $_POST["detail"]!=null){
                     echo $_POST["email"];
                     $num = $_POST["detail"]; 
+                    ?>
+                    <div class="border rounded p-3 mt-3 border-dark border-3 ">
+                    <?php 
                     for ($i = 1; $i <= $num; $i++) {
                         ?>
                         <div class="row ">
@@ -36,6 +39,9 @@
                         </div>
                     <?php 
                         }
+                    ?>
+                    </div>
+                    <?php
                     }
                 } 
                 ?>
