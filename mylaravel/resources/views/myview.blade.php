@@ -7,7 +7,7 @@
 <body>
 
 <div class="container mt-5">
-<form action="{{url('/Mycontroller')}}" method="post">
+<form action="{{url('/mylaravel')}}" method="post">
     @csrf
     <div class="h4 mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Email address</label>

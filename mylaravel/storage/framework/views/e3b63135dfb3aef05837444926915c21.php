@@ -7,7 +7,7 @@
 <body>
 
 <div class="container mt-5">
-<form action="<?php echo e(url('/Mycontroller')); ?>" method="post">
+<form action="<?php echo e(url('/mylaravel')); ?>" method="post">
     <?php echo csrf_field(); ?>
     <div class="h4 mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Email address</label>

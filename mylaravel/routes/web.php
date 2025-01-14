@@ -10,8 +10,8 @@ Route::get('/hello', function () {
     return "<h1>Happy very much!</h1>";
 });
 
-Route::get("/Mycontroller/{id?}", 
+Route::get("/mylaravel/{id?}", 
 [Mycontroller::class,'myfunction']);
 
-Route::post("/Mycontroller/{id?}", 
+Route::post("/mylaravel/{id?}", 
 [Mycontroller::class,'myfunction']);
