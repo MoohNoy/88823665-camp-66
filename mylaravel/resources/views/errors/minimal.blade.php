@@ -37,7 +37,7 @@
                     ?>
                     <div class ="{{$type_text_code[$code]}}">
                         @yield('code')
-                        </div>
+                    </div>
                         
                 </div>
                 <div class="col-md-9 text-start">
@@ -48,7 +48,7 @@
                             echo " Oops! Page not found.";
                         }
                         elseif($code == '500'){
-                            echo " Oops! Page not found.";
+                            echo " Oops! Something went wrong.";
                         }
                         ?>
                        
