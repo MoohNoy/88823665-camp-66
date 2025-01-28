@@ -1,5 +1,4 @@
 @extends('layouts.default')
-
 @section('content')
 <div class="register-page">
 <div class="register-box">
