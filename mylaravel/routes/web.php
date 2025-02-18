@@ -56,7 +56,7 @@ Route::delete('/user',
 [Usercontroller::class, 'delete']);
 
 
-Route::get('/login',function(){
+Route::get('/logout',function(){
     session()->forget('user');
     session()->flush();
 return redirect('/login');

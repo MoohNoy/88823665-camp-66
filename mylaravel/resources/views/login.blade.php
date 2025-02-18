@@ -12,7 +12,7 @@
                 <form action="{{url('/login')}}" method="post">
                     @csrf
                     <div class="input-group mb-3">
-                        <input type="email" name = "email" value="{{ isset($email) ? $email : }}" class="form-control" placeholder="Email" />
+                        <input type="email" name = "email" value="{{ isset($email) ? $email : "" }}" class="form-control" placeholder="Email" />
                         <div class="input-group-text"><span class="bi bi-envelope"></span></div>
                     </div>
                     

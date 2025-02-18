@@ -1,4 +1,4 @@
-@extends('layouts.default_with_menu')
+@extends('layouts.default')
 
 @section('content')
     <form action="{{ url('product') }}" method="post">
@@ -31,19 +31,39 @@
             </tr>
         </thead>
         <tbody>
-
+        <?php foreach ($categorys as $index => $category) {?>
+                            <tr>
+                                <td>{{$index + 1}}</td>
+                                <td>{{$category->name}}</td>
+                                <td>
+                                <?php    
+                                $name = '';
+                                foreach ($products->where('category_id', $category->id) as $product) { 
+                                    $name  = $user->where('id',$product->user_id)->first()->name;
+                                    ?>
+                                    <ul>
+                                        <li>{{$product->name}}</li>
+                                    </ul>
+                                    <?php } ?>
+                                </td>
+                                <td>{{$name}}</td>
+                            </tr>
+                            <?php }?>
         </tbody>
     </table>
 @endsection
 
 @section('scripts')
 <script>
+    
     $(document).ready(function(){
         var count =1;
+            
         $('#btn-add-product').on('click', function(){
+            let name = document.getElementById('category').value;
             $("#add-product").append(`
             <div class="mt-3 col-6">
-                <label class="form-label product-label">${count++}. Product Name
+                <label class="form-label product-label">${count++}. ${name} 
                     <button type="button" class="btn btn-danger btn-delete-product">ลบ</button>
                 </label>
                     <input type="text" name="product_name[]" class="form-control">
