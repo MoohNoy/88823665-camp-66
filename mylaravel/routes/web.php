@@ -6,10 +6,14 @@ use App\Http\Controllers\Logincontroller;
 use App\Http\Controllers\Registercontroller;
 use App\Http\Controllers\Homecontroller;
 use App\Http\Controllers\Usercontroller;
+use App\Http\Middleware\CheckLogin;
+use App\Http\Controllers\ProductController;
 
-Route::get('/hello', function () {
-    return "<h1>Happy very much!</h1>";
-});
+
+
+Route::get("/product",[ProductController::class,"index"])->middleware([CheckLogin::class,]);
+Route::post("/product",[ProductController::class,"store"])->middleware([CheckLogin::class,]);
+Route::post('/home', [HomeController::class, 'index'])->middleware([CheckLogin::class,]);
 
 Route::get("/mylaravel/{id?}", 
 [Mycontroller::class,'myfunction']);
@@ -30,7 +34,7 @@ Route::match(["get","post"],'/register',
 Route::get("/login", 
 [Logincontroller::class,'index']);
 Route::post("/login", 
-[Logincontroller::class,'index']);
+[Logincontroller::class,'login']);
 
 Route::get('/register',  
 [Registercontroller::class,'index']);
@@ -50,3 +54,10 @@ Route::put('/user' ,
 
 Route::delete('/user',
 [Usercontroller::class, 'delete']);
+
+
+Route::get('/login',function(){
+    session()->forget('user');
+    session()->flush();
+return redirect('/login');
+});
