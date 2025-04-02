@@ -12,7 +12,7 @@ class ProductController extends Controller
         $category = Categories::all();
         $product = ProductList::all();
         $Users = User::all();
-        return view('/product',['user'=>$Users,'categorys'=>$category,'products'=>$product]);
+        return view('/product',['user'=>$Users,'categorys'=>$category,'products'=>$product]); //ใช้ view('/product', [...]) ส่งข้อมูลไปให้ View โดยใช้ array (['key' => value])
     }
     function store(Request $req){
         $stock = new Categories();
@@ -26,5 +26,9 @@ class ProductController extends Controller
             $suppile->save();
         }  
         return redirect("/product");
+    }
+    function delete(Request $req){
+        Categories::where("id",$req->id)->delete();
+        return redirect('/product');
     }
 }

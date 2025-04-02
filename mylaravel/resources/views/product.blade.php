@@ -28,6 +28,7 @@
                 <td>Category Name</td>
                 <td>Product Name</td>
                 <td>User Name</td>
+                <td>Delete</td>
             </tr>
         </thead>
         <tbody>
@@ -47,6 +48,12 @@
                                     <?php } ?>
                                 </td>
                                 <td>{{$name}}</td>
+                                <td><form action="{{ url('/product') }}" method="post" onsubmit = "return clickme(event)">
+                                    @csrf
+                                    @method('delete')
+                                    <input type="hidden" name="id" value="{{$category->id}}">
+                                    <button class="btn btn-danger btn-sm" style="margin-left: auto;">Delete</button>
+                                </form></td>
                             </tr>
                             <?php }?>
         </tbody>
@@ -76,4 +83,23 @@
         })
     });
 </script>
+<script>
+    function clickme(event) {
+        event.preventDefault(); 
+        Swal.fire({
+            title: "Do you want to delete the information?",
+            text: "You can't reverse this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes , delete it !"
+        }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+            event.target.submit(); 
+      }
+        });   
+    }
+    </script>
 @endsection

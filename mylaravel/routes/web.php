@@ -10,7 +10,7 @@ use App\Http\Middleware\CheckLogin;
 use App\Http\Controllers\ProductController;
 
 
-
+Route::delete("/product",[ProductController::class,"delete"])->middleware([CheckLogin::class,]); //ตรวจสอบการ Login
 Route::get("/product",[ProductController::class,"index"])->middleware([CheckLogin::class,]);
 Route::post("/product",[ProductController::class,"store"])->middleware([CheckLogin::class,]);
 Route::post('/home', [HomeController::class, 'index'])->middleware([CheckLogin::class,]);

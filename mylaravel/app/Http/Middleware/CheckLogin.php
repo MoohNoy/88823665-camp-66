@@ -16,10 +16,9 @@ class CheckLogin
     public function handle(Request $request, Closure $next): Response
     {
         $user =  session()->get('user');
-        if(!isset($user)){
-            // return redirect("/login");   
+        if(!isset($user)){ 
+            return redirect("/login");  // ถ้าผู้ใช้ไม่ได้ล็อกอิน ให้ redirect
         }
-        
-        return $next($request);
+        return $next($request); //ส่ง request ไปยัง Controller หรือ Middleware ตัวถัดไป
     }
 }
