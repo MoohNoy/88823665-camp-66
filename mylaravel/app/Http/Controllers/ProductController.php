@@ -14,7 +14,7 @@ class ProductController extends Controller
         $Users = User::all();
         return view('/product',['user'=>$Users,'categorys'=>$category,'products'=>$product]); //ใช้ view('/product', [...]) ส่งข้อมูลไปให้ View โดยใช้ array (['key' => value])
     }
-    function store(Request $req){
+    function store(Request $req){ //ตรวจสอบ dd($req->all());
         $stock = new Categories();
         $stock ->name = $req->category;
         $stock ->save();

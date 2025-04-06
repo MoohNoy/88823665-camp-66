@@ -8,12 +8,14 @@
                 <div class="mb-3">
                     <label for="category" class="form-label">Category Name</label>
                     <input type="text" name="category" class="form-control" id="category">
+                    <div class="valid-feedback">กรอกข้อมูลถูกต้อง</div>
+                    <div class="invalid-feedback">กรุณากรอกข้อมูลให้ถูกต้อง</div>
                 </div>
             </div>
         </div>
-        <button type="button" id="btn-add-product" class="btn btn-primary">
+        <button type="button" id="btn-add-product" class="btn btn-primary" onclick = "Correct(event)"> 
             + เพิ่ม product
-        </button>
+        </button> <!-- btn-add-product ไปใช้ด้านล่าง -->
         <div class="row" id='add-product'>
 
         </div>
@@ -62,21 +64,18 @@
 
 @section('scripts')
 <script>
-    
     $(document).ready(function(){
-        var count =1;
-            
-        $('#btn-add-product').on('click', function(){
-            let name = document.getElementById('category').value;
-            $("#add-product").append(`
-            <div class="mt-3 col-6">
-                <label class="form-label product-label">${count++}. ${name} 
-                    <button type="button" class="btn btn-danger btn-delete-product">ลบ</button>
-                </label>
-                    <input type="text" name="product_name[]" class="form-control">
-            </div>
-            `)
-        })
+        // $('#btn-add-product').on('click', function(){
+        //     // let name = document.getElementById('category').value;
+        //     // $("#add-product").append(`
+        //     // <div class="mt-3 col-6">
+        //     //     <label class="form-label product-label">${count++}. ${name} 
+        //     //         <button type="button" class="btn btn-danger btn-delete-product">ลบ</button>
+        //     //     </label>
+        //     //         <input type="text" name="product_name[]" class="form-control"> 
+        //     // </div>
+        //     // `) 
+        // })// product_name[] ไปใช้ใน Controller
 
         $(document).on('click','.btn-delete-product', function(){
             $(this).parent().parent().remove();
@@ -101,5 +100,46 @@
       }
         });   
     }
-    </script>
+</script>
+<script>
+    function checkText(){
+    let text = $('#category').val().trim(); 
+    if (text !== "" && text.length>=3) {
+        $('#category').removeClass('is-invalid').addClass('is-valid'); 
+        return true;
+    } else {
+        $('#category').removeClass('is-valid').addClass('is-invalid'); 
+        return false;
+    }
+    
+    }
+    var count =1;
+    function Correct(event){
+    event.preventDefault();
+    let text = $('#category').val().trim(); 
+    let confirm =  checkText();
+    let nametitle = confirm ? "Success" : "Error",
+         nametext = !checkText()?"please input more ":"success",
+         typeicon = confirm ? "success" : "error";
+      swal.fire({
+        title:nametitle,
+        text : nametext,
+        icon:typeicon   
+      }).then((result) => {
+            if (result.isConfirmed) {
+                if(confirm){
+                let name = document.getElementById('category').value;
+            $("#add-product").append(`
+            <div class="mt-3 col-6">
+                <label class="form-label product-label">${count++}. ${name} 
+                    <button type="button" class="btn btn-danger btn-delete-product">ลบ</button>
+                </label>
+                    <input type="text" name="product_name[]" class="form-control"> 
+            </div>
+            `) 
+      }
+    }
+        });   
+    }
+</script>
 @endsection
